@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Program — BAAS Engineering</title>
+<meta name="description" content="The Program — the engineering platform behind BAAS systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--red:#C8102E;--ink:#171717;--muted:#6f6f6f;--faint:#9a9a9a;--line:#e4e4e4;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Jost',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 26px;width:100%}
+  main{flex:1;display:flex;align-items:center;padding:64px 0 24px}
+  .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center;width:100%}
+  h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:1px;color:#151515}
+  .rule{height:1px;background:var(--line);margin:20px 0 16px;max-width:440px}
+  .subtitle{font-style:italic;font-weight:300;font-size:clamp(16px,2vw,19px);color:var(--muted);margin-bottom:34px}
+  .body p{font-weight:300;font-size:clamp(15.5px,1.6vw,17.5px);line-height:1.85;color:#242424;max-width:460px;margin-bottom:16px}
+  .body strong{font-weight:500}
+  .red{color:var(--red);font-weight:500}
+  .divider{height:1px;background:var(--line);margin:26px 0;max-width:440px}
+  .visual{width:100%}
+  .visual svg{width:100%;height:auto;display:block}
+  #floor polyline{fill:none;stroke:#dcdcdc;stroke-width:0.5}
+  #mesh polyline{fill:none;stroke:#1b1b1b;stroke-width:0.5}
+  #spikes line{stroke:#5a5a5a;stroke-width:0.7;opacity:.5}
+  #wave polyline{fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linejoin:round;stroke-linecap:round}
+  .ring{fill:none;stroke:#d3d3d3;stroke-width:0.8}
+  .hud{fill:none;stroke:#bcbcbc;stroke-width:0.8}
+  .hud-t{font-family:'Jost',sans-serif;fill:#6f6f6f;letter-spacing:1px}
+  .hud-s{font-family:'Jost',sans-serif;fill:#a6a6a6;letter-spacing:2px}
+  .apex-t{font-family:'Jost',sans-serif;fill:var(--red);letter-spacing:1px}
+  .gateway{text-align:center;padding:6px 0 30px}
+  .arrow{display:inline-flex;flex-direction:column;align-items:center;gap:6px;color:#bcbcbc;text-decoration:none;transition:color .2s}
+  .arrow:hover{color:var(--red)}
+  .arrow span{font-size:10px;letter-spacing:3px;text-transform:uppercase}
+  .arrow svg{width:26px;height:26px;animation:bob 1.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+  footer{padding:24px 0;border-top:1px solid var(--line)}
+  footer p{text-align:center;font-weight:300;font-size:13.5px;color:var(--faint);letter-spacing:.3px}
+  @media(max-width:900px){
+    main{padding:44px 0 16px}
+    .grid{grid-template-columns:1fr;gap:34px}
+    .visual{order:-1}
+    .rule,.divider,.body p{max-width:none}
+  }
+  @media(prefers-reduced-motion:reduce){.arrow svg{animation:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <h1>THE PROGRAM</h1>
+        <div class="rule"></div>
+        <p class="subtitle">The engineering platform behind BAAS systems.</p>
+        <div class="body">
+          <p>An environment where technologies for real conditions and real problems are developed.</p>
+          <p>This is where our systems are born, where our ideas are tested, where <strong>BAAS</strong> evolves.</p>
+          <div class="divider"></div>
+          <p><span class="red">BAAS Engineering</span> does not build off-the-shelf solutions.</p>
+          <p>Here, systems are developed for specific missions, environments and constraints.</p>
+        </div>
+      </div>
+      <div class="visual">
+        <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RF spectrum surface at 1.6 GHz">
+          <defs>
+            <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.7" fill="#e6e6e6"/></pattern>
+            <radialGradient id="shad" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#000" stop-opacity="0.10"/><stop offset="100%" stop-color="#000" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="308" cy="405" rx="255" ry="150" fill="url(#dots)" opacity="0.5"/>
+          <ellipse cx="300" cy="404" rx="170" ry="34" fill="url(#shad)"/>
+          <ellipse class="ring" cx="300" cy="399" rx="250" ry="60" opacity="0.7"/>
+          <ellipse class="ring" cx="300" cy="399" rx="192" ry="46" opacity="0.5"/>
+          <ellipse class="ring" cx="300" cy="399" rx="134" ry="32" opacity="0.35"/>
+          <g id="floor"></g>
+          <g id="spikes"></g>
+          <g id="mesh"></g>
+          <g id="apex"></g>
+          <g id="wave"></g>
+          <line class="hud" x1="72" y1="112" x2="300" y2="112" opacity="0.55"/>
+          <text class="hud-t" x="540" y="118" font-size="17" text-anchor="end">1.60000</text>
+          <text class="hud-s" x="540" y="134" font-size="10" text-anchor="end">GHz</text>
+          <line class="hud" x1="548" y1="106" x2="548" y2="140"/>
+          <g transform="translate(60,178)"><circle class="hud" r="12"/><circle class="hud" r="6" opacity="0.7"/><path class="hud" d="M0 -12 A12 12 0 0 1 10 6"/><circle r="1.4" fill="#9a9a9a"/></g>
+          <g transform="translate(96,240)"><circle class="hud" r="9"/><circle class="hud" r="4" opacity="0.7"/><line class="hud" x1="0" y1="-9" x2="0" y2="-14"/></g>
+          <g class="hud" opacity="0.8"><path d="M544 300 h8 M548 296 v8"/><path d="M92 440 h8 M96 436 v8"/><path d="M470 58 h7 M473.5 54.5 v7"/></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="gateway">
+  <a class="arrow" href="baas-access.html" aria-label="Restricted access">
+    <span>Restricted</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</div>
+<footer><div class="wrap"><p>© BAAS Engineering — baasdev.com</p></div></footer>
+<script>
+(function(){
+  var N=30, ox=300, oy=300, ax=8, ay=3.3, az=140;
+  var peaks=[
+    {ci:16,cj:14,amp:1.05,sig:1.4},
+    {ci:14,cj:16,amp:0.80,sig:1.6},
+    {ci:19,cj:16,amp:0.62,sig:1.3},
+    {ci:12,cj:12,amp:0.50,sig:2.0},
+    {ci:21,cj:11,amp:0.40,sig:1.6},
+    {ci:9, cj:19,amp:0.36,sig:2.0},
+    {ci:20,cj:21,amp:0.30,sig:1.7},
+    {ci:24,cj:15,amp:0.24,sig:1.5},
+    {ci:11,cj:24,amp:0.20,sig:1.8}
+  ];
+  function h(i,j){var s=0,k,p,d;for(k=0;k<peaks.length;k++){p=peaks[k];d=((i-p.ci)*(i-p.ci)+(j-p.cj)*(j-p.cj))/(2*p.sig*p.sig);s+=p.amp*Math.exp(-d);}s+=0.03*Math.sin(i*0.8)*Math.cos(j*1.0);return s;}
+  function px(i,j){return (ox+(i-j)*ax);}
+  function py(i,j,hh){return (oy+(i+j)*ay-hh*az);}
+  function pt(i,j,hh){return px(i,j).toFixed(1)+','+py(i,j,hh).toFixed(1);}
+  var floor='',mesh='',i,j,pf,pm,op;
+  for(j=0;j<=N;j++){pf=[];pm=[];for(i=0;i<=N;i++){pf.push(pt(i,j,0));pm.push(pt(i,j,h(i,j)));}op=(0.30+0.42*(j/N)).toFixed(2);floor+='<polyline points="'+pf.join(' ')+'"/>';mesh+='<polyline points="'+pm.join(' ')+'" style="opacity:'+op+'"/>';}
+  for(i=0;i<=N;i++){pf=[];pm=[];for(j=0;j<=N;j++){pf.push(pt(i,j,0));pm.push(pt(i,j,h(i,j)));}op=(0.30+0.42*(i/N)).toFixed(2);floor+='<polyline points="'+pf.join(' ')+'"/>';mesh+='<polyline points="'+pm.join(' ')+'" style="opacity:'+op+'"/>';}
+  document.getElementById('floor').innerHTML=floor;
+  document.getElementById('mesh').innerHTML=mesh;
+  var sp='',tops=[[16,14],[14,16],[19,16]],t;
+  for(t=0;t<tops.length;t++){var ci=tops[t][0],cj=tops[t][1];sp+='<line x1="'+px(ci,cj).toFixed(1)+'" y1="'+py(ci,cj,0).toFixed(1)+'" x2="'+px(ci,cj).toFixed(1)+'" y2="'+py(ci,cj,h(ci,cj)).toFixed(1)+'"/>';}
+  document.getElementById('spikes').innerHTML=sp;
+  var axx=px(16,14),ayy=py(16,14,h(16,14));
+  document.getElementById('apex').innerHTML=
+    '<line x1="'+axx.toFixed(1)+'" y1="'+ayy.toFixed(1)+'" x2="'+axx.toFixed(1)+'" y2="'+(ayy-42).toFixed(1)+'" stroke="#C8102E" stroke-width="0.8" opacity="0.7"/>'+
+    '<circle cx="'+axx.toFixed(1)+'" cy="'+ayy.toFixed(1)+'" r="2.8" fill="#C8102E"/>'+
+    '<text class="apex-t" x="'+axx.toFixed(1)+'" y="'+(ayy-48).toFixed(1)+'" font-size="11" text-anchor="middle">1.6 GHz</text>';
+  var wf=[],m2,x,tt,v;
+  for(m2=0;m2<=110;m2++){x=72+m2*2.05;tt=m2/110;v=(Math.sin(m2*0.7)*Math.sin(m2*0.13)+Math.sin(m2*1.9)*0.4)*Math.exp(-Math.pow((tt-0.5)*2.4,2))*14;wf.push(x.toFixed(1)+','+(96-v).toFixed(1));}
+  document.getElementById('wave').innerHTML='<polyline points="'+wf.join(' ')+'"/>';
+})();
+</script>
+</body>
+</html>
