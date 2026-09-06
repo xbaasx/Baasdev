@@ -84,6 +84,15 @@
   .contact p{color:#cfcfcf;font-size:18px;max-width:480px;margin:0 auto 34px}
   .contact .email{font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,3vw,28px);color:#fff;display:inline-block;margin-top:8px;border-bottom:2px solid var(--red);padding-bottom:3px}
   .contact .email:hover{color:var(--red)}
+  .contact .c-kicker{font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;color:var(--red);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+  .contact .c-sub{max-width:620px}
+  .contact .c-three{display:flex;justify-content:center;max-width:680px;margin:6px auto 40px;border-top:1px solid #333;border-bottom:1px solid #333}
+  .contact .c-item{flex:1;padding:22px 14px;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;color:#fff;border-right:1px solid #333}
+  .contact .c-item:last-child{border-right:0}
+  .contact .c-item span{display:block;color:var(--red);font-size:12px;letter-spacing:1px;margin-bottom:6px}
+  .contact .c-mail{margin-top:24px;font-size:14px;max-width:none}
+  .contact .c-mail a{color:var(--muted-light);border-bottom:1px solid var(--red);padding-bottom:2px}
+  .contact .c-mail a:hover{color:#fff}
 
   footer{background:var(--ink);color:var(--muted-light);padding:42px 0;font-size:13.5px}
   .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
@@ -102,6 +111,9 @@
     .btn-ghost{margin-left:0;margin-top:12px}
     .prog-grid{grid-template-columns:1fr;gap:32px}
     .prog-img img{max-height:340px}
+    .c-three{flex-direction:column}
+    .c-item{border-right:0;border-bottom:1px solid #333}
+    .c-item:last-child{border-bottom:0}
   }
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   :focus-visible{outline:2px solid var(--red);outline-offset:3px}
@@ -191,9 +203,16 @@
 
 <section id="contact" class="contact">
   <div class="wrap">
-    <h2>Have a problem worth solving?</h2>
-    <p>Tell me what you're trying to build. Custom projects for offshore, maritime and defence.</p>
-    <a href="mailto:info@baasdev.com" class="email">info@baasdev.com</a>
+    <p class="c-kicker">Work with BAAS</p>
+    <h2>You bring the problem.<br>I build the solution.</h2>
+    <p class="c-sub">BAAS Engineering takes hard, one-off problems in offshore, maritime and defence and turns them into working hardware — RF, embedded, mechanical, whatever the job needs.</p>
+    <div class="c-three">
+      <div class="c-item"><span>01</span>The problem</div>
+      <div class="c-item"><span>02</span>Where it operates</div>
+      <div class="c-item"><span>03</span>Any hard limits</div>
+    </div>
+    <a href="mailto:info@baasdev.com?subject=Project%20enquiry%20%E2%80%94%20BAAS%20Engineering&body=1.%20What%27s%20the%20problem%3F%0D%0A%0D%0A2.%20Where%20does%20it%20operate%3F%20%28offshore%20%2F%20maritime%20%2F%20defence%2C%20environment%29%0D%0A%0D%0A3.%20Any%20hard%20limits%3F%20%28size%2C%20power%2C%20budget%2C%20deadline%29%0D%0A%0D%0A%E2%80%94%0D%0A" class="btn btn-red">Describe your problem</a>
+    <p class="c-mail"><a href="mailto:info@baasdev.com">info@baasdev.com</a></p>
   </div>
 </section>
 
